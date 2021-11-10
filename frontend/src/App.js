@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 const { createHash } = require('crypto');
 
 function App() {
@@ -21,11 +21,12 @@ function App() {
   return (
     <div>
       <header>
-        <p>
-          Enter some text below to begin the encoding: 
-        </p>
-        <div style={{alignContent: 'left'}}>
+        
+        <div style={{alignItems: 'center', alignContent: 'center', textAlign: 'center'}}>
           <label>
+            <p>
+              Enter some text below to begin the encoding: 
+            </p>
             {str} 
             <input type="text" name="input" onChange={(e) => setEnteredText(e.target.value)}/>
           </label>
@@ -33,7 +34,7 @@ function App() {
         </div>
         <div >
         {submitted && 
-          <div>
+          <div style={{alignItems: 'center', alignContent: 'center', textAlign: 'center'}}>
             <p style={{fontSize:12}}>
               SHA-256 Hash Value: {hash_256}
             </p>
@@ -45,7 +46,6 @@ function App() {
         }
       </div>
       </header>
-      
     </div>
   );
 }
