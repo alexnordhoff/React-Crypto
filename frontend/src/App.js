@@ -8,12 +8,12 @@ function App() {
   const str = "Text to Encode:    ";
   const [enteredText, setEnteredText] = useState("");
   const [hash_256, set256Hash] = useState("");
+  const [hash_512, set512Hash] = useState("");
   // const [cipher_aes, setAESCipher] = useState("");
   const [submitted, setSubmitted] = useState(false);
   function hash(string) {
     set256Hash(createHash('sha256').update(string).digest('hex'));
-
-
+    set512Hash(createHash('sha512').update(string).digest('hex'));
 
     setSubmitted(true);
     return
@@ -27,30 +27,29 @@ function App() {
               Enter some text below to begin the encoding: 
             </h1>
             <hr/>
-          <div class="col-md-1"> hi</div>
           <div class="col-md-6">
                 {str} 
                 <input class="form-control" type="text" name="input" onChange={(e) => setEnteredText(e.target.value)}/>
-
-              <button class="btn btn-primary" type="submit" onClick={()=>hash(enteredText)}> Submit </button>
+                <button class="btn btn-primary" style={{margin:10}} type="submit" onClick={()=>hash(enteredText)}> Submit </button>
           </div>
           <div class="col-md-5">
             <div >
             {submitted && 
               <div>
                 <p style={{fontSize:12}}>
-                  SHA-256 Hash Value: {hash_256}
+                  SHA-256 Hash Value:
                 </p>
-                {/* <p style={{fontSize:12}}>
-                  AES Encoded Value: {cipher_aes}
-                </p> */}
-                </div>
+                <p>{hash_256}</p>
+                <p style={{fontSize:12}}>
+                  SHA-512 Hash Value:
+                </p>
+                <p>{hash_512}</p>
+              </div>
             }
             </div>
           </div>
         </div>
       </header>
-      
     </div>
   );
 }
