@@ -4,7 +4,7 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 const { createHash } = require('crypto');
 
 function Sha() {
-  const str = "Text to Encode:    ";
+  const str = "Text to Hash:    ";
   const [enteredText, setEnteredText] = useState("");
   const [hash_256, set256Hash] = useState("");
   const [hash_512, set512Hash] = useState("");
@@ -19,17 +19,18 @@ function Sha() {
   return (
     <div class="container">
       <header>
-        <div class = "row" style={{alignContent: 'left'}}>
-            <h1 class="display-3">
-              Enter some text below to begin the encoding: 
+        <div class = "row" style={{alignContent: 'center'}}>
+            <h1 class="display-10">
+              Enter some text below to hash it!
             </h1>
             <hr/>
-          <div class="col-md-6">
+          <div>
                 {str} 
-                <input class="form-control" type="text" name="input" onChange={(e) => setEnteredText(e.target.value)}/>
+                <input class="form-control" placeholder="Enter a Message" type="text" name="input" onChange={(e) => setEnteredText(e.target.value)}/>
                 <button class="btn btn-primary" style={{margin:10}} type="submit" onClick={()=>hash(enteredText)}> Submit </button>
           </div>
-          <div class="col-md-5">
+        </div>
+          <div class="row">
             <div >
             {submitted && 
               <div>
@@ -45,7 +46,6 @@ function Sha() {
             }
             </div>
           </div>
-        </div>
       </header>
     </div>
   );
