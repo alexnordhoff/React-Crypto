@@ -28,7 +28,6 @@ export default function RSA() {
         
       }
 
-
     //read message and store
     const handleFileReadEnc = (e) => {
         const content = fileReader.result;

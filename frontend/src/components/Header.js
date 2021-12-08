@@ -21,11 +21,6 @@ function Header() {
                         <Nav.Link as={Link} to={"/sha"}>SHA</Nav.Link>
                         <Nav.Link as={Link} to={"/aes"}>AES</Nav.Link>
                         <Nav.Link as={Link} to={"/rsa"}>RSA</Nav.Link>
-                        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                        <NavDropdown.Item as={Link} to={"/about"}>About</NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to={"/devs"}>Devs</NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to={"/learning"}>Learning</NavDropdown.Item>
-                        </NavDropdown>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>
